@@ -8,7 +8,9 @@ const scores = [
     {name: 'Khalid', score: 92, grade: null},
     {name: 'Rianne', score: 66, grade: null}
 ];
-
+for(let i = 0; i < scores.length; i++) {
+    console.log(scores[i].score)
+}
 // Verwachtte uitkomsten:
 // 83
 // 77
@@ -25,6 +27,20 @@ const scores = [
 // Breid je script uit door voor iedere student de score om te rekenen naar een letter en dit in de terminal te printen
 // < 60 = F, < 70 = D, <80 = C, <90 B, <100 = A
 // Zorg ervoor dat dit ook zou werken als de array wel 100 of 200 getallen zou bevatten!
+
+for(let i = 0; i < scores.length; i++) {
+    if (scores[i].score > 90) {
+        console.log(`A`);
+    } else if (scores[i].score > 80) {
+        console.log(`B`);
+    } else if (scores[i].score > 70) {
+        console.log(`C`);
+    } else if (scores[i].score > 60) {
+        console.log(`D`);
+    } else {
+        console.log(`F`);
+    }
+}
 // Verwachtte uitkomsten:
 // B
 // C
@@ -39,6 +55,23 @@ const scores = [
 // ==========================================
 // Opdracht 1c
 // Breid je script uit door de bijbehorende letter op te slaan in de 'grade'-property van ieder student-object in de array.
+
+console.log(scores);
+for(let i = 0; i < scores.length; i++) {
+    if (scores[i].score > 90) {
+        scores[i].grade = `A`;
+    } else if (scores[i].score > 80) {
+        scores[i].grade = `B`;
+    } else if (scores[i].score > 70) {
+        scores[i].grade = `C`;
+    } else if (scores[i].score > 60) {
+        scores[i].grade = `D`;
+    } else {
+        scores[i].grade = `F`;
+    }
+}
+console.log(scores);
+
 // Vóór het script zie je de originele objecten,
 // Na jouw script zie je de aangepaste objecten:
 // console.log(scores) geeft: [
@@ -65,6 +98,12 @@ const NOVIEmployees = [
 ];
 
 // Bij NOVI horen de e-mailadressen altijd in het volgende format: voornaam.achternaam@novi.nl
+console.log(NOVIEmployees);
+for(let i = 0; i < NOVIEmployees.length; i++) {
+  email = NOVIEmployees[i].firstName + NOVIEmployees[i].lastName + `@novi.nl`;
+  NOVIEmployees[i].email = email;
+}
+console.log(NOVIEmployees);
 // Vóór het script zie je de originele objecten,
 // Na jouw script zie je de aangepaste objecten:
 // console.log(NOVIEmployees) geeft: [
@@ -84,6 +123,13 @@ const NOVIEmployees = [
 // Lukt het je om ervoor te zorgen dat alle e-mailadressen in lowercase letters komen te staan? Dit heb je nog niet geleerd, maar google is your best friend...
 // ==========================================
 
+for(let i = 0; i < NOVIEmployees.length; i++) {
+    email = NOVIEmployees[i].firstName + NOVIEmployees[i].lastName + `@novi.nl`;
+    email = email.toLowerCase();
+    NOVIEmployees[i].email = email;
+}
+console.log(`We change all email-addresses to lowerCase:`);
+console.log(NOVIEmployees);
 
 
 
@@ -98,7 +144,7 @@ const NOVIEmployees = [
 //  3572 = Wittevrouwen
 //  3581 = Oudwijk
 //  3583 = Schildersbuurt
-
+//
 const students = [
     {name: 'Mariska', city: 'Utrecht', zipCode: '3513', neighborhood: null},
     {name: 'Mehmet', city: 'Utrecht', zipCode: '3514', neighborhood: null},
@@ -112,8 +158,34 @@ const students = [
     {name: 'Laura', city: 'Utrecht', zipCode: '3531', neighborhood: null},
     {name: 'Aicha', city: 'Utrecht', zipCode: '3514', neighborhood: null},
     {name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: null},
-];
-
+]
+console.log(students);
+for(let i = 0; i < students.length; i++) {
+    switch (students[i].zipCode) {
+        case `3513`:
+            students[i].neighborhood = `Pijlsweerd`;
+            break;
+        case `3514`:
+            students[i].neighborhood = `Vogelenbuurt`;
+            break;
+        case `3512`:
+            students[i].neighborhood = `Binnenstad`;
+            break;
+        case `3531`:
+            students[i].neighborhood = `Lombok`;
+            break;
+        case `3572`:
+            students[i].neighborhood = `Wittevrouwen`;
+            break;
+        case `3581`:
+            students[i].neighborhood = `Oudwijk`;
+            break;
+        case `3583`:
+            students[i].neighborhood = `Schildersbuurt`;
+            break;
+    }
+}
+console.log(students);
 // Verwachte uitkomsten:
 // [
 //     { name: 'Mariska', city: 'Utrecht', zipCode: '3513', neighborhood: 'Pijlsweerd' },
